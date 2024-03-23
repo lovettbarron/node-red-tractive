@@ -20,15 +20,16 @@
     "version": ">=2.0.0",
     "nodes": {
       "tractive-tracker": "node-red-grist/tracker.js",
-      "tractive-connect": "node-red-tractive/connect.js"
+      "tractive-connect": "node-red-tractive/connect.js",
+      "tractive-get-tracker": "node-red-tractive/get-tracker.js"
     }
   },
   "engines": {
     "node": ">=14.0.0"
   },
   "dependencies": {
-    "grist-api": "^0.1.7",
     "mustache": "^4.2.0",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "tractive": "^1.2.1"
   }
 }

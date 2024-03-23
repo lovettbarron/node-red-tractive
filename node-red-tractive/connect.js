@@ -4,5 +4,5 @@ module.exports = function (RED) {
     this.username = n.username;
     this.password = n.password;
   }
-  RED.nodes.registerType("tractive-connect", ServerNode);
+  RED.nodes.registerType("tractive-connect", ConnectNode);
 };

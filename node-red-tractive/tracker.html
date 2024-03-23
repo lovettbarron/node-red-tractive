@@ -1,25 +1,34 @@
 <script type="text/javascript">
-    RED.nodes.registerType('grist-document',{
-        category: 'config',
-        defaults: { 
-            name: {value:"", required:false},
-            docid: {value:"",required:true},
-        },
-        label: function() {
-            return this.name || this.docid;
-        }
-    });
+  RED.nodes.registerType("tractive-tracker", {
+    category: "config",
+    defaults: {
+      id: { value: "", required: true },
+      type: { value: "", required: false },
+      version: { value: "", required: false },
+    },
+    label: function () {
+      return this.id;
+    },
+  });
 </script>
 
-<script type="text/html" data-template-name="grist-document">
-    <div class="form-row">
-        <label for="node-config-input-name"><i class="fa fa-bookmark"></i> Name</label>
-        <input type="text" id="node-config-input-name">
-    </div>
-    <div class="form-row">
-        <label for="node-config-input-docid"><i class="fa fa-file-text"></i> Document ID</label>
-        <input type="text" id="node-config-input-docid">
-    </div>
-
-
+<script type="text/html" data-template-name="tractive-tracker">
+  <div class="form-row">
+    <label for="node-config-input-name"
+      ><i class="fa fa-file-text"></i> Tracker ID</label
+    >
+    <input type="text" id="node-config-input-id" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-name"
+      ><i class="fa fa-file-text"></i> Name</label
+    >
+    <input type="text" id="node-config-input-type" />
+  </div>
+  <div class="form-row">
+    <label for="node-config-input-version"
+      ><i class="fa fa-file-text"></i> Version</label
+    >
+    <input type="text" id="node-config-input-docid" />
+  </div>
 </script>
