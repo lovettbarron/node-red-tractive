@@ -16,6 +16,17 @@ module.exports = function (RED) {
       if (tractive.isAuthenticated()) {
         const tracker = tractive.getTracker(this.tracker.id);
         node.send({ ...msg, payload: tracker });
+        if (done) done();
+
+        if (err) {
+          if (done) {
+            // Node-RED 1.0 compatible
+            done(err);
+          } else {
+            // Node-RED 0.x compatible
+            node.error(err, msg);
+          }
+        }
       } else {
         node.log(`Failure to connect`);
       }
