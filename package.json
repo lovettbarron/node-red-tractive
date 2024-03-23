@@ -1,0 +1,34 @@
+{
+  "name": "@lovettbarron/node-red-tractive",
+  "version": "0.1.0",
+  "description": "Tractive.com connectivity for NodeRed",
+  "main": "index.js",
+  "packageManager": "yarn@3.3.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "node-red",
+    "grist"
+  ],
+  "bugs": {
+    "url": "https://github.com/lovettbarron/node-red-tractive"
+  },
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "tractive-tracker": "node-red-grist/tracker.js",
+      "tractive-connect": "node-red-tractive/connect.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "grist-api": "^0.1.7",
+    "mustache": "^4.2.0",
+    "node-fetch": "^3.3.2"
+  }
+}
