@@ -6,14 +6,14 @@
       password: { value: "", required: true, type: "password" },
     },
     label: function () {
-      return this.hostname || "server";
+      return this.username || "Tractive Account";
     },
   });
 </script>
 
 <script type="text/html" data-template-name="tractive-connect">
   <div class="form-row">
-    <label for="node-config-input-hostname"
+    <label for="node-config-input-username"
       ><i class="fa fa-server"></i> Username</label
     >
     <input type="text" id="node-config-input-username" />
@@ -22,6 +22,6 @@
     <label for="node-config-input-password"
       ><i class="fa fa-key"></i> Password</label
     >
-    <input type="text" id="node-config-input-apiKey" />
+    <input type="text" id="node-config-input-password" />
   </div>
 </script>
