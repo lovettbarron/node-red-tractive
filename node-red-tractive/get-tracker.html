@@ -1,22 +1,21 @@
 <script type="text/javascript">
-    RED.nodes.registerType('grist-get-records', {
-        name: "Get records",
-        category: 'grist',
+    RED.nodes.registerType('tractive-get-tracker', {
+        name: "Get Tracker",
+        category: 'tractive',
         color: '#00bb00',
         defaults: {
-            server: { value: "", type: "grist-server", required: true },
-            document: { value: "", type: "grist-document", required: true },
-            tableId: { value: "", required: true },
-            filter: { value: "", required: false }
+            server: { value: "", type: "tractive-connect", required: true },
+            document: { value: "", type: "tractive-tracker", required: true },
+            
         },
         inputs: 1,
         outputs: 1,
         icon: "font-awesome/fa-table",
         label: function () {
-            return this.tableId ? `[Get] ${this.tableId}` : "Get records";
+            return this.tableId ? `[Get] ${this.tableId}` : "Get Tracker";
 
         },
-        paletteLabel: "Get records",
+        paletteLabel: "Get Tracker",
         oneditprepare: function () {
             $("#node-input-filter").typedInput({
                 type: "json",
@@ -30,36 +29,27 @@
 
 <script type="text/html" data-template-name="grist-get-records">
     <div class="form-row">
-        <label for="node-input-document"><i class="fa fa-file-text"></i> Document</label>
-        <input type="text" id="node-input-document" placeholder="Document">
+        <label for="node-input-document"><i class="fa fa-file-text"></i> Tracker</label>
+        <input type="text" id="node-input-tracker" placeholder="Tracker">
     </div>
     <div class="form-row">
-        <label for="node-input-server"><i class="fa fa-server"></i> Server</label>
-        <input type="text" id="node-input-server" placeholder="Server">
+        <label for="node-input-server"><i class="fa fa-server"></i> Connect</label>
+        <input type="text" id="node-input-connect" placeholder="Connect">
     </div>
-    <div class="form-row">
-        <label for="node-input-tableId"><i class="fa fa-table"></i> Table Name</label>
-        <input type="text" id="node-input-tableId" placeholder="Table Name">
-    </div>
-    <div class="form-row">
-        <label for="node-input-filter"><i class="fa fa-filter"></i> Filter</label>
-        <input type="text" id="node-input-filter">
-    </div>
+    
 
 
 </script>
 
 <script type="text/html" data-help-name="grist-get-records">
-    <p>Retrieves records from a grist table.</p>
-    <h3>Inputs</h3>
+    <p>Fetch a tracker by ID.</p>
+    <h3>Requirements</h3>
     <p>
-        The input message object is available for the <code>filter</code> property via mustache template syntax.
+        Connect and Tracker objects with associated valid info. Basically username and password, and tracker id.
     </p>
     <h3>Outputs</h3>
     <p>
-        Array of grist rows (records).
+        Tracker info blob
     </p>
-    <h3>Attributes</h3>
-    <p>
-        <code>filter</code> JSON object with filter definition. Supports mustache syntax for templates.</p>
+    
 </script>
