@@ -5,14 +5,14 @@
         color: '#00bb00',
         defaults: {
             server: { value: "", type: "tractive-connect", required: true },
-            document: { value: "", type: "tractive-tracker", required: true },
+            tracker: { value: "", type: "tractive-tracker", required: true },
             
         },
         inputs: 1,
         outputs: 1,
         icon: "font-awesome/fa-table",
         label: function () {
-            return this.tableId ? `[Get] ${this.tableId}` : "Get Tracker";
+            return this.tracker ? `[Get] ${this.tracker.id}` : "Get Tracker";
 
         },
         paletteLabel: "Get Tracker",
