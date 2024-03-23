@@ -10,8 +10,8 @@
   "author": "",
   "license": "GPL-3.0-or-later",
   "keywords": [
-    "node-red",
-    "grist"
+    // "node-red",
+    "tractive"
   ],
   "bugs": {
     "url": "https://github.com/lovettbarron/node-red-tractive"
